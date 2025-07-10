@@ -1,9 +1,11 @@
 <!DOCTYPE html>
-<html lang="ar" dir="rtl">
+
+<html dir="rtl" lang="ar">
 <head>
-  <meta charset="UTF-8">
-  <title>النماذج الذكية | الباقات الموسعة</title>
-  <style>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>النماذج الذكية | الباقات الموسعة</title>
+<style>
     :root {
         --nvidia-green: #76B900;
         --nvidia-black: #1a1a1a;
@@ -13,16 +15,32 @@
     
     body {
       font-family: 'Cairo', sans-serif;
-      background: #000000; /* تغيير الخلفية إلى أسود */
+      background: #000000;
       padding: 22px;
-      color: #fff; /* تغيير لون النص العام إلى أبيض */
+      color: #fff;
+      margin: 0;
+    }
+
+    .banner-container {
+      width: 100%;
+      max-width: 1200px;
+      margin: 0 auto 20px;
+      text-align: center;
+    }
+
+    .banner {
+      width: 100%;
+      max-height: 200px;
+      object-fit: contain;
+      border-radius: 8px;
     }
 
     h1 {
       text-align: center;
       font-size: 28px;
       font-weight: bold;
-      color: #ffffff; /* إضافة لون أبيض للعنوان الرئيسي */
+      color: #ffffff;
+      margin-top: 20px;
     }
 
     h2 {
@@ -37,7 +55,7 @@
     .section-content {
       display: none;
       padding: 10px 20px;
-      background: #1a1a1a; /* تغيير خلفية المحتوى إلى رمادي داكن */
+      background: #1a1a1a;
       border-radius: 8px;
       margin-bottom: 20px;
     }
@@ -61,26 +79,53 @@
     .gpt-button:hover {
       background: var(--button-hover);
     }
-  </style>
+
+    @media (max-width: 768px) {
+      .banner {
+        max-height: 150px;
+      }
+      
+      h1 {
+        font-size: 24px;
+      }
+      
+      .gpt-button {
+        font-size: 18px;
+      }
+    }
+  
+.sticky-header {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background-color: #76B900;
+  padding: 10px;
+  margin: 0;
+}
+</style>
 </head>
 <body>
-
+<div class="banner-container">
+<a href="https://zraiee.github.io/Arabic-GPT-Abdulrahman-Alzarraei" target="_blank">
+<img alt="شعار النماذج الذكية" class="banner" src="banner.png"/>
+</a>
+</div>
 <h1>📚 واجهة النماذج الذكية - الباقات الموسعة</h1>
 <script>
-  function toggleSection(id) {
-    const section = document.getElementById(id);
-    section.style.display = section.style.display === 'block' ? 'none' : 'block';
-  }
-  function openGPT(url) {
-    window.open(url, '_blank');
-  }
-</script>
+    function toggleSection(id) {
+      const section = document.getElementById(id);
+      section.style.display = section.style.display === 'block' ? 'none' : 'block';
+    }
+    function openGPT(url) {
+      window.open(url, '_blank');
+    }
+  </script>
 <h2 onclick="toggleSection('pkg1')">📦 الرابط العام لجميع النماذج</h2>
-<div id="pkg1" class="section-content">
+<div class="section-content" id="pkg1">
 <button class="gpt-button" onclick="openGPT('https://chatgpt.com/g/g-681f47498138819197d357982c29544c-nmdhj-jy-by-ty-ldhky-custom-gpts?model=gpt-4o')">🧠 GPTs النماذج الذكية</button>
 </div>
-<h2 onclick="toggleSection('pkg2')">📦 باقة الباحث</h2>
-<div id="pkg2" class="section-content">
+<h2 class="sticky-header" onclick="toggleSection('pkg2')">📦 باقة الباحث</h2>
+<div class="section-content" id="pkg2">
 <button class="gpt-button" onclick="openGPT('https://chatgpt.com/g/g-67b44b7c337c81919a26dbe8a22c7329-bwt-d-lsyg-human-reformulation')">🔄 إعادة الصياغة</button>
 <button class="gpt-button" onclick="openGPT('https://chatgpt.com/g/g-nq1rwzxlt-wjh-wyb-lbhthy-web-search-interface')">🌐 واجهة ويب البحثية</button>
 <button class="gpt-button" onclick="openGPT('https://chatgpt.com/g/g-txUGYAgZo-bwt-lbhth-lkmy-quantitative-research')">📊 البحث الكمي</button>
@@ -110,7 +155,7 @@
 <button class="gpt-button" onclick="openGPT('https://chatgpt.com/g/g-684aee5a12908191adae472dd09683da-bwt-dlyl-lmkhtwtt-guide-to-arabic-manuscripts')">📜 دليل المخطوطات</button>
 </div>
 <h2 onclick="toggleSection('pkg3')">📦 باقة المصمم</h2>
-<div id="pkg3" class="section-content">
+<div class="section-content" id="pkg3">
 <button class="gpt-button" onclick="openGPT('https://chatgpt.com/g/g-MjYIkEgCZ-tsmym-lsh-rt-wlyqwnt')">🎯 تصميم الشعارات</button>
 <button class="gpt-button" onclick="openGPT('https://chatgpt.com/g/g-686631eb6e1c8191b378f3d9426dffd9-bwt-flks-twlyd-ns-prompt-generation')">🧠 فلكس توليد النص</button>
 <button class="gpt-button" onclick="openGPT('https://chatgpt.com/g/g-NnDPefNjb-mwld-lswr')">🖼️ فلكس توليد الصور</button>
@@ -118,7 +163,7 @@
 <button class="gpt-button" onclick="openGPT('https://chatgpt.com/g/g-684bc4365cf88191bee81ad4e17c73a4-bwt-msmm-glf-lktb-book-cover-designer')">📕 تصميم أغلفة كتب</button>
 </div>
 <h2 onclick="toggleSection('pkg4')">📦 باقة المصور</h2>
-<div id="pkg4" class="section-content">
+<div class="section-content" id="pkg4">
 <button class="gpt-button" onclick="openGPT('https://chatgpt.com/g/g-67e448ce4d3c8191957441abbbea0e15-bwt-lqt-fwtwgrfy-photoshoot')">📷 لقطة فوتوغرافية</button>
 <button class="gpt-button" onclick="openGPT('https://chatgpt.com/g/g-68184a43538c819181244cf9fad3f14d-bwt-tsmym-lmntjt-product-designer')">🛍️ تصميم المنتجات</button>
 <button class="gpt-button" onclick="openGPT('https://chatgpt.com/g/g-681ee9cfa1808191ae8354dd294e22e7-bwt-nmt-lktb-l-lny-media-writing-styles')">📢 الإعلان التجاري</button>
@@ -127,7 +172,7 @@
 <button class="gpt-button" onclick="openGPT('https://chatgpt.com/g/g-kr3gLSpBX-nqd-lswr-wltsmym')">🔍 تحكيم الصورة</button>
 </div>
 <h2 onclick="toggleSection('pkg5')">📦 باقة المونتاج</h2>
-<div id="pkg5" class="section-content">
+<div class="section-content" id="pkg5">
 <button class="gpt-button" onclick="openGPT('https://chatgpt.com/g/g-68609b05a4688191a5ee6b9c283f590d-lsh-r-lgnyy-lyric-poetry')">🎤 الشعر الغنائي</button>
 <button class="gpt-button" onclick="openGPT('https://chatgpt.com/g/g-680af88128448191abf1f79e1a28ed24-bwt-sn-lmwthrt-lswty-sound-effects-maker')">🔊 صانع المؤثرات الصوتية</button>
 <button class="gpt-button" onclick="openGPT('https://chatgpt.com/g/g-pZrqc0dzq-bwt-brwmbt-fydyw-prompt-video-text')">🎬 سيناريو رسوم متحركة</button>
@@ -137,7 +182,7 @@
 <button class="gpt-button" onclick="openGPT('https://chatgpt.com/g/g-6834416cc680819187ecf538d6357924-bwt-llqtt-lmthrk-animation-assistant')">🎞️ اللقطات المتحركة</button>
 </div>
 <h2 onclick="toggleSection('pkg6')">📦 باقة ثري دي</h2>
-<div id="pkg6" class="section-content">
+<div class="section-content" id="pkg6">
 <button class="gpt-button" onclick="openGPT('https://chatgpt.com/g/g-6805d62a3db08191b48fef7b130250c9-thwyl-thnyy-b-d-l-thlthy-b-d-from-2d-to-3d')">🔄 تحويل ثنائي إلى ثلاثي</button>
 <button class="gpt-button" onclick="openGPT('https://chatgpt.com/g/g-6805228400a4819199d343721757f308-bwt-ms-d-blndr-blender-assistant')">🍥 مساعد بلندر</button>
 <button class="gpt-button" onclick="openGPT('https://chatgpt.com/g/g-67e296d30fac8191ac7a25ebe4449358-bwt-ms-d-kwmfy-wkryt-comfyui-krita-assistant')">🖌️ مساعد كومفي وكريتا</button>
@@ -145,7 +190,7 @@
 <button class="gpt-button" onclick="openGPT('https://chatgpt.com/g/g-67d3bb966ccc8191be2dbf9e42fe6738-bwt-stwry-bwrd-lnskh-lkml')">🗂️ ستوري بورد</button>
 </div>
 <h2 onclick="toggleSection('pkg7')">📦 باقة العمارة والديكور</h2>
-<div id="pkg7" class="section-content">
+<div class="section-content" id="pkg7">
 <button class="gpt-button" onclick="openGPT('https://chatgpt.com/g/g-67f8ff7e85588191b0c072edad01aeed-bwt-ltsmym-ldkhly-wldykwr-interior-design')">🏛️ التصميم الداخلي</button>
 <button class="gpt-button" onclick="openGPT('https://chatgpt.com/g/g-684ad230059c8191932c45962048441e-bwt-lzkhrf-lslmy-islamic-decoration-expert')">🕌 الزخرفة الإسلامية</button>
 <button class="gpt-button" onclick="openGPT('https://chatgpt.com/g/g-675c117052208191a549c55239de4cca-bwt-lnmt-lfny-style-prompt')">🎨 الأنماط الفنية</button>
@@ -156,7 +201,7 @@
 <button class="gpt-button" onclick="openGPT('https://chatgpt.com/g/g-684c3da57e548191af5db2d6932a61c4-dlyl-llwn-lhtrfy-professional-color-guide')">🎨 دليل الألوان</button>
 </div>
 <h2 onclick="toggleSection('pkg8')">📦 باقة الإدارة والتسويق</h2>
-<div id="pkg8" class="section-content">
+<div class="section-content" id="pkg8">
 <button class="gpt-button" onclick="openGPT('https://chatgpt.com/g/g-675c796bfd608191aec72cc192df3ba2-bwt-drs-ljdw-feasibility')">📈 دراسة جدوى</button>
 <button class="gpt-button" onclick="openGPT('https://chatgpt.com/g/g-67bb3129b5b48191be90cce08a39045d-bwt-lhmlt-l-lny-advertising-campaigns')">🚀 إطلاق الحملات التسويقية</button>
 <button class="gpt-button" onclick="openGPT('https://chatgpt.com/g/g-67e2515939d081919477d7e3d1533cf0-bwt-mns-khmst-khamsat-website')">💼 منصة خمسات</button>
@@ -168,7 +213,7 @@
 <button class="gpt-button" onclick="openGPT('https://chatgpt.com/g/g-686f6321f9c0819193825ee83be1e078-l-sf-ldhhny-wtwlyd-lfkr-ljdyd')">💡 العصف الذهني</button>
 </div>
 <h2 onclick="toggleSection('pkg20')">📦 باقة المعلم التفاعلي</h2>
-<div id="pkg20" class="section-content">
+<div class="section-content" id="pkg20">
 <button class="gpt-button" onclick="openGPT('https://chatgpt.com/g/g-I6fHWMrjF-bwt-qs-lf-l-lmdr-story-grammar')">📘 الفعل المضارع</button>
 <button class="gpt-button" onclick="openGPT('https://chatgpt.com/g/g-7URngWLIq-bwt-lm-lm-ltf-ly-fy-lrydyt-teacher-math')">🧮 المعلم التفاعلي في الرياضيات</button>
 <button class="gpt-button" onclick="openGPT('https://chatgpt.com/g/g-HZyfh7pMs-bwt-lm-lm-ltf-ly-fy-lnjlyzy-teacher-english')">📚 المعلم التفاعلي في الإنجليزي</button>
@@ -182,13 +227,13 @@
 <button class="gpt-button" onclick="openGPT('https://chatgpt.com/g/g-6867dece81148191978a5384bdee7058-lmstshr-lmly-ldhky-smart-financial-advisor')">💵 المستشار المالي الذكي</button>
 </div>
 <h2 onclick="toggleSection('pkg21')">📦 باقة محرر النصوص</h2>
-<div id="pkg21" class="section-content">
+<div class="section-content" id="pkg21">
 <button class="gpt-button" onclick="openGPT('https://chatgpt.com/g/g-jTT3PxOev-bwt-rwd-bwrbwynt-presentation-ppt')">📊 تصميم عروض بوربوينت</button>
 <button class="gpt-button" onclick="openGPT('https://chatgpt.com/g/g-67c877434d24819182fb3212b3e0b931-bwt-brmjyt-l-qyl-al-aqeel-software')">💻 برمجيات العقيل</button>
 <button class="gpt-button" onclick="openGPT('https://chatgpt.com/g/g-6868ad216e84819187f2c0fe02091a5b-musniwf-lktb-llktrwny-ebook-classifier')">📚 مصنف الكتب الإلكترونية</button>
 </div>
 <h2 onclick="toggleSection('pkg22')">📦 باقة صانع البوت</h2>
-<div id="pkg22" class="section-content">
+<div class="section-content" id="pkg22">
 <button class="gpt-button" onclick="openGPT('https://chatgpt.com/g/g-6773ed1b51c08191bc9ad41eaf7068e6-bwt-t-lym-tsht-jy-by-ty-gpt-education')">🧠 تعليم GPTs</button>
 <button class="gpt-button" onclick="openGPT('https://chatgpt.com/g/g-677e87f76b8c8191922a80d9774ba392-dwr-sn-lnmdhj-building-gpt')">🏗️ صناعة النماذج الذكية</button>
 <button class="gpt-button" onclick="openGPT('https://chatgpt.com/g/g-87OFcAcmH-t-lymt-tkwyn-lnmdhj-gpt-instructions')">⚙️ تعليمات تكوين النماذج</button>
