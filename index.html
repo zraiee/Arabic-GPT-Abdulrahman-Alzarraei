@@ -4,103 +4,140 @@
 <head>
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>النماذج الذكية | الباقات الموسعة</title>
+<title>النماذج الذكية | الباقات الكاملة</title>
 <style>
-    :root {
-        --nvidia-green: #76B900;
-        --nvidia-black: #1a1a1a;
-        --button-bg: var(--nvidia-green);
-        --button-hover: var(--nvidia-black);
-    }
-    
-    body {
-      font-family: 'Cairo', sans-serif;
-      background: #000000;
-      padding: 22px;
-      color: #fff;
-      margin: 0;
-    }
+:root {
+  /* ✅ اللون الأسود الجديد – أصبح اللون الأساسي للأزرار */
+  --nvidia-green: #000000;
 
-    .banner-container {
-      width: 100%;
-      max-width: 1200px;
-      margin: 0 auto 20px;
-      text-align: center;
-    }
+  /* ✅ الأسود الداكن – يستخدم كخلفيات داكنة عامة */
+  --nvidia-black: #1a1a1a;
 
-    .banner {
-      width: 100%;
-      max-height: 200px;
-      object-fit: contain;
-      border-radius: 8px;
-    }
+  /* ✅ خلفية الزر الأساسية */
+  --button-bg: var(--nvidia-green);
 
-    h1 {
-      text-align: center;
-      font-size: 28px;
-      font-weight: bold;
-      color: #ffffff;
-      margin-top: 20px;
-    }
+  /* ✅ لون الخلفية عند المرور Hover: أخضر نيفيديا الآن */
+  --button-hover: #76B900;
+}
 
-    h2 {
-      background: var(--nvidia-green);
-      color: #fff;
-      padding: 10px;
-      cursor: pointer;
-      border-radius: 8px;
-      margin-top: 20px;
-    }
 
-    .section-content {
-      display: none;
-      padding: 10px 20px;
-      background: #1a1a1a;
-      border-radius: 8px;
-      margin-bottom: 20px;
-    }
+/* 🎯 إعدادات الصفحة العامة */
+body {
+  font-family: 'Cairo', sans-serif; /* خط عربي أنيق */
+  background: #000000;              /* خلفية سوداء للموقع */
+  padding: 26px;                    /* حواف داخلية للصفحة */
+  color: #000;                      /* اللون الأسود للنصوص (← راجع التباين!) */
+  margin: 0;                        /* إزالة الهوامش الافتراضية */
+}
 
-    .gpt-button {
-      font-size: 20px;
-      font-weight: 500;
-      background: var(--button-bg);
-      color: white;
-      display: block;
-      width: 100%;
-      margin: 6px 0;
-      padding: 10px;
-      border: none;
-      border-radius: 6px;
-      cursor: pointer;
-      transition: background 0.3s ease;
-      text-align: right;
-    }
 
-    .gpt-button:hover {
-      background: var(--button-hover);
-    }
+/* 🖼️ حاوية صورة البانر */
+.banner-container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto 20px;
+  text-align: center;
+}
 
-    @media (max-width: 768px) {
-      .banner {
-        max-height: 150px;
-      }
-      
-      h1 {
-        font-size: 24px;
-      }
-      
-      .gpt-button {
-        font-size: 18px;
-      }
-    }
-  
+
+/* 🖼️ إعدادات صورة البانر */
+.banner {
+  width: 100%;
+  max-height: 200px;
+  object-fit: contain;
+  border-radius: 8px;
+}
+
+
+/* 🏷️ العنوان الرئيسي */
+h1 {
+  text-align: center;
+  font-size: 36px;
+  font-weight: bold;
+  color: #76B900; /* ← تم الاحتفاظ بالأخضر لتمييز العنوان */
+  margin-top: 20px;
+}
+
+
+/* 🏷️ العناوين الفرعية القابلة للنقر */
+h2 {
+  background: var(--nvidia-black);  /* ← خلفية داكنة */
+  color: #fff;
+  padding: 10px;
+  cursor: pointer;
+  border-radius: 8px;
+  margin-top: 20px;
+}
+
+
+/* 📦 محتوى القسم المخفي */
+.section-content {
+  display: none;
+  padding: 10px 20px;
+  background: #1a1a1a;
+  border-radius: 8px;
+  margin-bottom: 20px;
+}
+
+
+/* 🧠 زر GPT الذكي */
+.gpt-button {
+  font-size: 32px;
+  font-weight: 500;
+  background: var(--button-bg);  /* ← خلفية من :root */
+  color: white;
+  display: block;
+  width: 100%;
+  margin: 6px 0;
+  padding: 16px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+  text-align: right;
+}
+
+
+/* 🖱️ تأثير المرور على الزر */
+.gpt-button:hover {
+  background: #76B900;
+  color: #000 !important;
+  background: var(--button-hover); /* ← الآن أخضر نيفيديا */
+}
+
+
+/* 📱 استجابة للموبايل */
+@media (max-width: 768px) {
+  .banner {
+    max-height: 150px;
+  }
+
+  h1 {
+    font-size: 34px;
+  }
+
+  .gpt-button {
+    font-size: 36px;
+  }
+}
+
+
+/* 📌 شريط علوي يطفو عند التمرير */
 .sticky-header {
   position: sticky;
   top: 0;
   z-index: 1000;
-  background-color: #76B900;
-  padding: 10px;
+  background-color: #000000; /* ← رمادي فاتح لشريط الرأس */
+  padding: 16px;
   margin: 0;
+}
+
+
+.gpt-button.centered-button {
+  margin-right: auto;
+  margin-left: auto;
+  display: block;
+  text-align: center;
 }
 </style>
 </head>
@@ -110,7 +147,7 @@
 <img alt="شعار النماذج الذكية" class="banner" src="banner.png"/>
 </a>
 </div>
-<h1>📚 واجهة النماذج الذكية - الباقات الموسعة</h1>
+<h1>📚 النماذج الذكية | الباقات الكاملة</h1>
 <script>
     function toggleSection(id) {
       const section = document.getElementById(id);
@@ -120,40 +157,10 @@
       window.open(url, '_blank');
     }
   </script>
-<h2 onclick="toggleSection('pkg1')">📦 الرابط العام لجميع النماذج</h2>
+<h2 onclick="toggleSection('pkg1')" style="text-align: center;">📦 الرابط العام لجميع النماذج</h2>
 <div class="section-content" id="pkg1">
-<button class="gpt-button" onclick="openGPT('https://chatgpt.com/g/g-681f47498138819197d357982c29544c-nmdhj-jy-by-ty-ldhky-custom-gpts?model=gpt-4o')">🧠 GPTs النماذج الذكية</button>
-</div>
-<h2 class="sticky-header" onclick="toggleSection('pkg2')">📦 باقة الباحث</h2>
-<div class="section-content" id="pkg2">
-<button class="gpt-button" onclick="openGPT('https://chatgpt.com/g/g-67b44b7c337c81919a26dbe8a22c7329-bwt-d-lsyg-human-reformulation')">🔄 إعادة الصياغة</button>
-<button class="gpt-button" onclick="openGPT('https://chatgpt.com/g/g-nq1rwzxlt-wjh-wyb-lbhthy-web-search-interface')">🌐 واجهة ويب البحثية</button>
-<button class="gpt-button" onclick="openGPT('https://chatgpt.com/g/g-txUGYAgZo-bwt-lbhth-lkmy-quantitative-research')">📊 البحث الكمي</button>
-<button class="gpt-button" onclick="openGPT('https://chatgpt.com/g/g-UEL0GgbkF-bwt-tkhryj-lhdyth-lnbwy-graduation-of-hadiths')">📜 تخريج الأحاديث</button>
-<button class="gpt-button" onclick="openGPT('https://chatgpt.com/g/g-XYZknTHPW-bwt-trjm-l-lm-translation-of-flags')">🌍 ترجمة الأعلام</button>
-<button class="gpt-button" onclick="openGPT('https://chatgpt.com/g/g-762SWrxgA-bwt-tnsyq-lmrj-reference-formatting')">📚 تنسيق مراجع البحث</button>
-<button class="gpt-button" onclick="openGPT('https://chatgpt.com/g/g-X51QAhBwR-bwt-twthyq-lbhwth-research-documentation')">📝 توثيق البحوث</button>
-<button class="gpt-button" onclick="openGPT('https://chatgpt.com/g/g-EvIbEhTiz-bwt-dlyl-lnzm-lbhthy-researcher-s-guide')">📖 دليل الأنظمة البحثية</button>
-<button class="gpt-button" onclick="openGPT('https://chatgpt.com/g/g-tXrotFsS3-lnthl-wlslwb-lbshry-human-style')">🧬 الانتحال والأسلوب البشري</button>
-<button class="gpt-button" onclick="openGPT('https://chatgpt.com/g/g-680a3eefb2bc8191967abacfd909ede3-bwt-lmsdr-wlmrj-l-lmy-research-resources')">📚 المصادر والمراجع العلمية</button>
-<button class="gpt-button" onclick="openGPT('https://chatgpt.com/g/g-ngWYTPQ2p-bwt-m-jm-lklmt-dictionary')">📘 معجم الكلمات</button>
-<button class="gpt-button" onclick="openGPT('https://chatgpt.com/g/g-FG9ivmtVu-bwt-thlyl-lmlft-pdf-file-analysis')">📑 تحليل ملفات البحث</button>
-<button class="gpt-button" onclick="openGPT('https://chatgpt.com/g/g-67f0bf48eb1c8191b85a522cc7bf8065-bwt-mhll-lbynt-lbhthy-research-data-analyst')">📊 محلل البيانات البحثية</button>
-<button class="gpt-button" onclick="openGPT('https://chatgpt.com/g/g-6854d69971c08191a9b4fb1cc8520ca5-bwt-lhl-lfwry-llrd-lshr-y')">⚖️ الرد الفوري على الفتوى</button>
-<button class="gpt-button" onclick="openGPT('https://chatgpt.com/g/g-681eb9a149508191acdb41536ca221ef-bwt-lms-d-fy-tlyf-lktb-writing-assistant')">✍️ المساعد في تأليف الكتب</button>
-<button class="gpt-button" onclick="openGPT('https://chatgpt.com/g/g-683d09bea51c8191b7688edadeef821d-bwt-sn-lkht-lbhthy')">🧩 صناعة الخطة البحثية</button>
-<button class="gpt-button" onclick="openGPT('https://chatgpt.com/g/g-Yzv1meJnf-bwt-rb-lnsws-grammar')">📖 إعراب النصوص</button>
-<button class="gpt-button" onclick="openGPT('https://chatgpt.com/g/g-67d515daced481918a47851b5cc7c5f6-bwt-qwql-lsry-fast-search-engine')">🔍 الوصول السريع إلى ملفات PDF</button>
-<button class="gpt-button" onclick="openGPT('https://chatgpt.com/g/g-6867c4ceb758819180fd00287855fdbe-bwt-ltrjm-l-lmy-scientific-translation')">📄 ترجمة بحوث عربي/إنجليزي</button>
-<button class="gpt-button" onclick="openGPT('https://chatgpt.com/g/g-xsoCTz5C6-bwt-trjm-lnsws-translation-of-texts')">🌐 ترجمة النصوص</button>
-<button class="gpt-button" onclick="openGPT('https://chatgpt.com/g/g-686b8ac963248191b35f6c4d8629e688-qtrh-nwyn-bhthy-suggesting-research-titles')">🎯 اقتراح عنوان وفكرة بحث</button>
-<button class="gpt-button" onclick="openGPT('https://chatgpt.com/g/g-lf64lTcUn-bwt-ltdqyq-llgwy-proofreading')">📝 التدقيق اللغوي</button>
-<button class="gpt-button" onclick="openGPT('https://chatgpt.com/g/g-GhBmeBZb7-bwt-tshkyl-lnsws-text-formation')">🔤 تشكيل النصوص</button>
-<button class="gpt-button" onclick="openGPT('https://chatgpt.com/g/g-686b9a99fa3c81918b796c6ead2cdf06-lm-l-rwd-wlwzn-lsh-ry-poetic-meters')">📏 علم العروض</button>
-<button class="gpt-button" onclick="openGPT('https://chatgpt.com/g/g-6803f1a7a4a88191b3c7627fbc3a6fac-bwt-ms-d-wwrd-word-assistant')">📊 تقسيم التركات</button>
-<button class="gpt-button" onclick="openGPT('https://chatgpt.com/g/g-6867e1da44588191be51a05f100da88a-bwt-nzm-lzk-zakat-system')">💰 نظام الزكاة</button>
-<button class="gpt-button" onclick="openGPT('https://chatgpt.com/g/g-684aee5a12908191adae472dd09683da-bwt-dlyl-lmkhtwtt-guide-to-arabic-manuscripts')">📜 دليل المخطوطات</button>
-</div>
+<button class="gpt-button centered-button" onclick="openGPT('https://chatgpt.com/g/g-681f47498138819197d357982c29544c-nmdhj-jy-by-ty-ldhky-custom-gpts?model=gpt-4o')" style="text-align: center;">🧠 GPTs النماذج الذكية</button>
+</div><h2 onclick="toggleSection('pkg2')">📦 باقة الباحث</h2><div class="section-content" id="pkg2"><button class="gpt-button" onclick="openGPT('https://chatgpt.com/g/g-686b8ac963248191b35f6c4d8629e688-qtrh-nwyn-bhthy-suggesting-research-titles')">🎯 اقتراح عنوان وفكرة بحث</button><button class="gpt-button" onclick="openGPT('https://chatgpt.com/g/g-683d09bea51c8191b7688edadeef821d-bwt-sn-lkht-lbhthy')">🧩 صناعة الخطة البحثية</button><button class="gpt-button" onclick="openGPT('https://chatgpt.com/g/g-EvIbEhTiz-bwt-dlyl-lnzm-lbhthy-researcher-s-guide')">📖 دليل الباحث الجامعي</button><button class="gpt-button" onclick="openGPT('https://chatgpt.com/g/g-6870ad25b828819189c59c4bf012c04c-d-m-lbhth-lnw-y')">📊 داعم البحث النوعي</button><button class="gpt-button" onclick="openGPT('https://chatgpt.com/g/g-txUGYAgZo-bwt-lbhth-lkmy-quantitative-research')">📊 داعم البحث الكمي</button><button class="gpt-button" onclick="openGPT('https://chatgpt.com/g/g-UEL0GgbkF-bwt-tkhryj-lhdyth-lnbwy-graduation-of-hadiths')">📜 تخريج الأحاديث النبوية</button><button class="gpt-button" onclick="openGPT('https://chatgpt.com/g/g-X51QAhBwR-bwt-twthyq-lbhwth-research-documentation')">📝 توثيق البحوث</button><button class="gpt-button" onclick="openGPT('https://chatgpt.com/g/g-XYZknTHPW-bwt-trjm-l-lm-translation-of-flags')">🌍 ترجمة الأعلام</button><button class="gpt-button" onclick="openGPT('https://chatgpt.com/g/g-ngWYTPQ2p-bwt-m-jm-lklmt-dictionary')">📘 معجم الكلمات</button><button class="gpt-button" onclick="openGPT('https://chatgpt.com/g/g-680a3eefb2bc8191967abacfd909ede3-bwt-lmsdr-wlmrj-l-lmy-research-resources')">📚 المصادر والمراجع العلمية</button><button class="gpt-button" onclick="openGPT('https://chatgpt.com/g/g-762SWrxgA-bwt-tnsyq-lmrj-reference-formatting')">📚 تنسيق مراجع البحث</button><button class="gpt-button" onclick="openGPT('https://chatgpt.com/g/g-67b44b7c337c81919a26dbe8a22c7329-bwt-d-lsyg-human-reformulation')">🔄 إعادة الصياغة</button><button class="gpt-button" onclick="openGPT('https://chatgpt.com/g/g-lf64lTcUn-bwt-ltdqyq-llgwy-proofreading')">📝 التدقيق اللغوي</button><button class="gpt-button" onclick="openGPT('https://chatgpt.com/g/g-GhBmeBZb7-bwt-tshkyl-lnsws-text-formation')">🔤 تشكيل النصوص</button></div><h2 onclick="toggleSection('pkg100')">📦 باقة مساعد الباحث</h2><div class="section-content" id="pkg100"><button class="gpt-button" onclick="openGPT('https://chatgpt.com/g/g-67d515daced481918a47851b5cc7c5f6-bwt-qwql-lsry-fast-search-engine')">🔍 الوصول السريع إلى ملفات PDF</button><button class="gpt-button" onclick="openGPT('https://chatgpt.com/g/g-FG9ivmtVu-bwt-thlyl-lmlft-pdf-file-analysis')">📑 تحليل ملفات البحث</button><button class="gpt-button" onclick="openGPT('https://chatgpt.com/g/g-67f0bf48eb1c8191b85a522cc7bf8065-bwt-mhll-lbynt-lbhthy-research-data-analyst')">📊 محلل البيانات البحثية</button><button class="gpt-button" onclick="openGPT('https://chatgpt.com/g/g-nq1rwzxlt-wjh-wyb-lbhthy-web-search-interface')">🌐 واجهة ويب البحثية</button><button class="gpt-button" onclick="openGPT('https://chatgpt.com/g/g-681eb9a149508191acdb41536ca221ef-bwt-lms-d-fy-tlyf-lktb-writing-assistant')">✍️ المساعد في تأليف الكتب</button><button class="gpt-button" onclick="openGPT('https://chatgpt.com/g/g-686b9a99fa3c81918b796c6ead2cdf06-lm-l-rwd-wlwzn-lsh-ry-poetic-meters')">📏 علم العروض والأوزان الشعرية</button><button class="gpt-button" onclick="openGPT('https://chatgpt.com/g/g-6803f1a7a4a88191b3c7627fbc3a6fac-bwt-ms-d-wwrd-word-assistant')">📊 تقسيم التركات في الفرائض</button><button class="gpt-button" onclick="openGPT('https://chatgpt.com/g/g-6867e1da44588191be51a05f100da88a-bwt-nzm-lzk-zakat-system')">💰 نظام الزكاة</button><button class="gpt-button" onclick="openGPT('https://chatgpt.com/g/g-684aee5a12908191adae472dd09683da-bwt-dlyl-lmkhtwtt-guide-to-arabic-manuscripts')">📜 دليل المخطوطات</button><button class="gpt-button" onclick="openGPT('https://chatgpt.com/g/g-tXrotFsS3-lnthl-wlslwb-lbshry-human-style')">🧬 الانتحال والأسلوب البشري</button><button class="gpt-button" onclick="openGPT('https://chatgpt.com/g/g-6854d69971c08191a9b4fb1cc8520ca5-bwt-lhl-lfwry-llrd-lshr-y')">⚖️ الرد الفوري على الفتوى الشرعية</button><button class="gpt-button" onclick="openGPT('https://chatgpt.com/g/g-Yzv1meJnf-bwt-rb-lnsws-grammar')">📖 إعراب النصوص</button><button class="gpt-button" onclick="openGPT('https://chatgpt.com/g/g-6867c4ceb758819180fd00287855fdbe-bwt-ltrjm-l-lmy-scientific-translation')">📄 ترجمة بحوث عربي إنجليزي</button><button class="gpt-button" onclick="openGPT('https://chatgpt.com/g/g-xsoCTz5C6-bwt-trjm-lnsws-translation-of-texts')">🌐 ترجمة النصوص</button></div>
 <h2 onclick="toggleSection('pkg3')">📦 باقة المصمم</h2>
 <div class="section-content" id="pkg3">
 <button class="gpt-button" onclick="openGPT('https://chatgpt.com/g/g-MjYIkEgCZ-tsmym-lsh-rt-wlyqwnt')">🎯 تصميم الشعارات</button>
